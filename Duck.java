@@ -1,4 +1,6 @@
 abstract public class Duck {
+    protected int HP;
+
     Voice voice;
 
     public void setVoice(Voice voice) {
@@ -6,6 +8,17 @@ abstract public class Duck {
     }
 
     public void voice() {
-        voice.voice();
+        if (HP > 0) {
+            voice.voice();
+            HP--;
+        }
+        else {
+            System.out.println("The Duck has already dead.");
+        }
+    }
+
+    public int getHP() {
+        return HP;
     }
 }
+
